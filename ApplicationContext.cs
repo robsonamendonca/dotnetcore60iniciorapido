@@ -5,6 +5,9 @@ namespace pgapp
 {
 	public class ApplicationContext : DbContext
 	{
+		public ApplicationContext() : base()
+		{
+		}
 		public ApplicationContext(DbContextOptions options)
 				: base(options)
 		{
@@ -15,10 +18,10 @@ namespace pgapp
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-        modelBuilder.Entity<Comment>()
-            .HasOne(c => c.Post)
-            .WithMany(p => p.Comments)
-            .HasForeignKey(p => p.PostId);
-    }
+		        modelBuilder.Entity<Comment>()
+	        	    .HasOne(c => c.Post)
+		            .WithMany(p => p.Comments)
+		            .HasForeignKey(p => p.PostId);
+		 }
 	}
 }
