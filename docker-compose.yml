@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    container_name: dotnetCore60
+    build: .
+    environment:
+      - DATABASE_URL=server=database;port=5432;userid=postgres;database=posts;password=password
+    ports:
+        - "5005:5000"
+    depends_on:
+        - database
+  database:
+    container_name: database
+    image: postgres:latest
+    ports: 
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
