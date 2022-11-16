@@ -1,4 +1,4 @@
-# .net Core 6.1, Docker, PostgreSQL, Swagger, C#
+# .Net Core 6.1, Docker, PostgreSQL, Swagger, C#
 
 ## Requerido
 - [Docker](https://www.docker.com/) 
@@ -97,9 +97,9 @@ user: postgres
 password: password
 ```
 
-![Overview](https://raw.githubusercontent.com/kukielp/dotnetcore60quickstart/master/pg-1.png "Overview")
+![Tela 1](https://raw.githubusercontent.com/robsonamendonca/dotnetcore60iniciorapido/main/pg-1.png "Tela 1")
 
-![Overview](https://raw.githubusercontent.com/kukielp/dotnetcore60quickstart/master/pg-2.png "Overview")
+![Tela 2](https://raw.githubusercontent.com/robsonamendonca/dotnetcore60iniciorapido/main/pg-2.png "Tela 2")
 
 Se você deseja executar o aplicativo localmente, adicione uma entrada de host. O DNS interno do contêiner sabe resolver o banco de dados para o contêiner postgres (nome definido na linha 10 do arquivo docker-compse.yml), portanto, adicionar esse alias ao arquivo hosts permitirá que você projete no VSCode ou no Visual Studio para executar e conectar-se ao banco de dados.
 
@@ -125,9 +125,11 @@ Local url com comments: http://localhost:5005/api/comments
 Local url para comment 1: http://localhost:5005/api/comments/1
 
 
-![Visão Geral](https://raw.githubusercontent.com/kukielp/dotnetcore60quickstart/master/overview.png "Visão Geral")
+![Visão Geral](https://raw.githubusercontent.com/robsonamendonca/dotnetcore60iniciorapido/main/overview.png "Visão Geral")
 
-Feito originalmente por : ![https://github.com/kukielp](https://github.com/kukielp "kukielp"), baseado no repositório:
-![dotnetcore31quickstart](https://github.com/kukielp/dotnetcore31quickstart "dotnetcore31quickstart")
+<hr>
 
-Traduzido com 💚 por ![Robson Mendonça](https://about.me/robsonamendonca "Robson Mendonça")
+Feito originalmente por: https://github.com/kukielp, 
+baseado no repositório: https://github.com/kukielp/dotnetcore31quickstart
+
+Traduzido com 💚 por https://about.me/robsonamendonca
