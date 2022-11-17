@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using Microsoft.OpenApi.Models;
@@ -17,9 +18,12 @@ namespace pgapp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            //var connectionString = Configuration["ConnectionString"];
-            string connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
-            var builder = new NpgsqlConnectionStringBuilder(connectionString);
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            string connectionStringUrl = Environment.GetEnvironmentVariable("DATABASE_URL");          
+
+            connectionString = string.IsNullOrEmpty(connectionStringUrl) ? connectionString : connectionStringUrl;
+            NpgsqlConnectionStringBuilder npgsqlConnectionStringBuilder = new NpgsqlConnectionStringBuilder(connectionString);
+            NpgsqlConnectionStringBuilder  builder = npgsqlConnectionStringBuilder;
                  
             services.AddDbContext<ApplicationContext>
                 (options => options.UseNpgsql(builder.ConnectionString));
